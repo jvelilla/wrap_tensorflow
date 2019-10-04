@@ -8,7 +8,7 @@ using [WrapC](https://github.com/eiffel-wrap-c/WrapC) tool.
 *  [WrapC](https://github.com/eiffel-wrap-c/WrapC) tool.
 *  [TensorFlow C API](https://www.tensorflow.org/install/lang_c).
 
-## Status ==
+## Status
 
 Work in progress
 
