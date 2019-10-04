@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<ewg_config name="libtensorflow">
+
+  <rule_list>
+		
+    <!-- Ignore everything that starts with an underscore. --> 
+    <rule>
+      <match>
+          <identifier name="_.*"/>	
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+    <!-- Exclude Struct TF_WHILE_PARAMS, if you need to generate teh wrapper again, 
+      since we need to update the corresponding generated code 
+    <rule>
+      <match>
+	   <identifier name="TF_WhileParams"/>
+	   <type name="struct"/>		
+      </match>
+      <wrapper type="none">
+      </wrapper>
+    </rule> 
+    -->
+
+    <!-- Exclude tf_new_while TF function, if you need to generate the wrapper again, 
+      since we need to update the corresponding generated code 
+    <rule>
+       <match>
+          <identifier name="tf_new_while"/>
+	  <type name="function"/>		
+       </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+    -->
+
+
+  <!-- Include all TF functions in a uniform class-->
+    <rule>
+       <match>
+          <identifier name="TF_.*"/>
+	  <type name="function"/>		
+       </match>
+       <wrapper type="default">
+	  <class_name name="TENSORFLOW_FUNCTIONS"/>
+      </wrapper>
+    </rule>
+
+    <!-- Include all TF callbacks, once the callbacks are wrapped, this rule can be removed. -->
+    <rule>
+       <match>
+    	  <type name="any"/>		
+       </match>
+       <wrapper type="default">
+       </wrapper>
+    </rule>
+
+   <!-- And the rest should be ignored -->
+    <rule>
+      <match>
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+  </rule_list>
+
+</ewg_config>
