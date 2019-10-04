@@ -9,7 +9,7 @@ case remove it manually.
 ## Using WrapC with geant
 $LIB_PATH is the path to the library folder where you checkout the wrap_tensorflow library.
 
-### Wrap libgit2 library
+### Wrap tensor library
 
 Go to the $LIB_PATH/library
 
@@ -29,7 +29,7 @@ Go to the $LIB_PATH/library
 $LIB_PATH is the path to the library folder where you checkout the wrap_tensorflow library.
 At the moment the tool require --output-dir and --full-header to be full paths.
   
-### Wrap plplot library  
+### Wrap tensor library  
   ```
     wrap_c --verbose --output-dir=$LIB_PATH/library/generated_wrapper --full-header=$LIB_PATH/library/C/include/c_api.h config.xml
   ```
