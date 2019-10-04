@@ -8,12 +8,12 @@ using [WrapC](https://github.com/eiffel-wrap-c/WrapC) tool.
 *  [WrapC](https://github.com/eiffel-wrap-c/WrapC) tool.
 *  [TensorFlow C API](https://www.tensorflow.org/install/lang_c).
 
-== Status ==
+## Status ==
 
 Work in progress
 
 
-== Examples ==
+## Examples
 The examples are based on the following github repository [Example TensorFlow C API](https://github.com/Neargye/hello_tf_c_api)
 
 * [Hello TF](examples/version_tf)
