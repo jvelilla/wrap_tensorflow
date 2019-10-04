@@ -12,3 +12,11 @@ using [WrapC](https://github.com/eiffel-wrap-c/WrapC) tool.
 
 Work in progress
 
+
+== Examples ==
+The examples are based on the following github repository [Example TensorFlow C API](https://github.com/Neargye/hello_tf_c_api)
+
+* [Hello TF](examples/version_tf)
+* [Load graph](examples/load_graph)
+* [Create Tensor](examples/create_tensor)
+
