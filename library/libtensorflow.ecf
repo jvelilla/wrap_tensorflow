@@ -14,7 +14,7 @@
 				<platform value="windows"/>
 			</condition>
 		</external_include>
-		<external_include location="$ECF_CONFIG_PATH\C\include">
+		<external_include location="$ECF_CONFIG_PATH\C\include\tensorflow\c">
 			<condition>
 				<platform value="windows"/>
 			</condition>
@@ -29,7 +29,7 @@
 				<platform excluded_value="windows"/>
 			</condition>
 		</external_include>
-		<external_object location="$ECF_CONFIG_PATH/C/lib/libtensorflow.lib">
+		<external_object location="$ECF_CONFIG_PATH/C/lib/tensorflow.lib">
 			<condition>
 				<platform value="windows"/>
 			</condition>

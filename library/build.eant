@@ -29,9 +29,9 @@
   <target name="init_wrap_c">
     <set name="system_dir" value="${cwd}"/>
     <set name="wrap_c.library_name" value="libtensorflow"/>
-    <set name="wrap_c.full_header_name" value="${cwd}${path_separator}C${path_separator}include${path_separator}c_api.h" if="${is_windows}" />
+    <set name="wrap_c.full_header_name" value="${cwd}${path_separator}C${path_separator}include${path_separator}tensorflow${path_separator}c${path_separator}c_api.h" if="${is_windows}" />
     <set name="wrap_c.full_header_name" value="/usr/local/include/tensorflow/c/c_api.h"  unless="${is_windows}" />
-    <set name="wrap_c.c_compile_options" value="" if="${is_windows}"/>	
+    <set name="wrap_c.c_compile_options" value=" " if="${is_windows}"/>	
     <set name="wrap_c.c_compile_options" value="-I/usr/local/include/tensorflow/c" unless="${is_windows}"/>	
 
     <set name="wrap_c.use_config_file" value="True"/>
@@ -47,7 +47,9 @@
         </description>
       <set name="wrap_c.config_file_option" value=""/>
       <set name="wrap_c.config_file_option" value="--config=config.xml" if="${wrap_c.use_config_file}=True"/> 
-      <exec executable="wrap_c ${wrap_c.verbose} --c_compile_options=${wrap_c.c_compile_options} --output-dir=${wrap_c.wrapper_dir} --full-header=${wrap_c.full_header_name} ${wrap_c.config_file_option}"/>
+      <set name="c_compile_options" value = "" if="${is_windows}"/> 
+      <set name="c_compile_options" value = "--c_compile_options=${wrap_c.c_compile_options}" unless="${is_windows}"/> 
+      <exec executable="wrap_c ${wrap_c.verbose} ${c_compile_options} --output-dir=${wrap_c.wrapper_dir} --full-header=${wrap_c.full_header_name} ${wrap_c.config_file_option}"/>
     </target>
 
     <target name="wrap_c_pre_script" depend="init_wrap_c">
